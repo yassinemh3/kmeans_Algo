@@ -12,7 +12,7 @@ def initialize_centroids(data, k):
 def assign_clusters(data, centroids):
     """Assigns each data point to the nearest centroid using Manhattan distance."""
     distances = np.abs(data - centroids[:, np.newaxis]).sum(axis=2)
-    # """Assigns each data point to the nearest centroid."""
+    # """Assigns each data point to the nearest centroid using Euclidean distance"""
     # distances = np.sqrt(((data - centroids[:, np.newaxis])**2).sum(axis=2))
     return np.argmin(distances, axis=0)
 
